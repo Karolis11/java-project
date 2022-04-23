@@ -32,6 +32,10 @@ public class MotorVehicle implements TrafficParticipant {
         ++vehicleCount;
         this.vehicleNumber = vehicleCount;
     }
+
+    protected void vehicleNumberForClonedObject(){
+        assignVehicleNumber();
+    }
     // Setters and Getters
     public String getCountry(){
         return country;

@@ -1,6 +1,6 @@
 package OOP.motorVehicles;
 
-public class Truck extends MotorVehicle{
+public class Truck extends MotorVehicle implements Cloneable{
     private int maxLoadCapacity; // kg
     private int currentlyLoaded = 0; // kg
     private int height;
@@ -8,6 +8,12 @@ public class Truck extends MotorVehicle{
     private int trailerLength;
     private int trailerWidth;
     private int trailerWeight;
+
+    public Object clone() throws CloneNotSupportedException{
+        Truck cloned = (Truck)super.clone();
+        super.vehicleNumberForClonedObject();
+        return cloned;
+    }
 
     public Truck(){
         super(Colors.Black, 10000, 70);

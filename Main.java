@@ -2,7 +2,7 @@ import OOP.motorVehicles.*;
 import OOP.pedestrians.*;
 
 public class Main {
-    public static void main(String[] args) throws InvalidNumberException {
+    public static void main(String[] args) throws InvalidNumberException, CloneNotSupportedException {
         MotorVehicle car = new MotorVehicle(Colors.Blue, 2500, 200);
         MotorVehicle car2 = new MotorVehicle();
         MotorVehicle car3 = new Car();
@@ -39,14 +39,36 @@ public class Main {
 
         try {
 //            c.loadCar(0);
-            c.unloadCar(-1);
-        }
-        catch(ZeroNumberException exc){
+            c.unloadCar(1);
+        } catch (ZeroNumberException exc) {
+            System.out.println(exc.getMessage());
+        } catch (InvalidNumberException exc) {
             System.out.println(exc.getMessage());
         }
-        catch(InvalidNumberException exc){
+
+        Truck original = new Truck(Colors.Green, 9000, 200, 100, 20);
+        Truck cloned = null;
+        Truck cloned2 = null;
+
+        try {
+            cloned = (Truck) original.clone();
+            cloned2 = (Truck) original.clone();
+        } catch (CloneNotSupportedException exc) {
             System.out.println(exc.getMessage());
         }
+
+        original.loadTruck(20);
+        cloned.loadTruck(50);
+        cloned2.loadTruck(80);
+
+        original.move(Directions.Right, 100);
+        cloned.move(Directions.Forward, 40);
+        cloned2.move(Directions.Left, 70);
+
+        System.out.println(original);
+        System.out.println(cloned);
+        System.out.println(cloned2);
+
 
     }
 
