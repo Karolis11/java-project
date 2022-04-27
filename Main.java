@@ -13,7 +13,7 @@ public class Main {
 
         Truck t = new Truck();
 
-        Pedestrian ped = new Pedestrian(Gender.Male, 20, 78);
+//        Pedestrian ped = new Pedestrian(Gender.Male, 20, 78);
 
         car3.move(Directions.Forward, 60);
         car3.move(Directions.Backwards, 60);
@@ -37,37 +37,51 @@ public class Main {
 //        System.out.println(m.getX());
         //-----------------------------------
 
-        try {
-//            c.loadCar(0);
-            c.unloadCar(1);
-        } catch (ZeroNumberException exc) {
-            System.out.println(exc.getMessage());
-        } catch (InvalidNumberException exc) {
-            System.out.println(exc.getMessage());
-        }
+//        try {
+////            c.loadCar(0);
+//            c.unloadCar(1);
+//        } catch (ZeroNumberException exc) {
+//            System.out.println(exc.getMessage());
+//        } catch (InvalidNumberException exc) {
+//            System.out.println(exc.getMessage());
+//        }
+
+        MotorVehicle car6 = VehicleFactory.getMotorVehicle("Car");
+        car6.move(Directions.Forward, 100);
+
+//        System.out.println(car6);
 
         Truck original = new Truck(Colors.Green, 9000, 200, 100, 20);
-        Truck cloned = null;
-        Truck cloned2 = null;
+//        Truck cloned = null;
+//        Truck cloned2 = null;
+
+        Truck truck3 = null;
+        Truck truck4 = null;
 
         try {
-            cloned = (Truck) original.clone();
-            cloned2 = (Truck) original.clone();
+            truck3 = (Truck)original.clone();
+            truck4 = (Truck)original.clone();
+//            cloned = (Truck) original.clone();
+//            cloned2 = (Truck) original.clone();
         } catch (CloneNotSupportedException exc) {
             System.out.println(exc.getMessage());
         }
 
-        original.loadTruck(20);
-        cloned.loadTruck(50);
-        cloned2.loadTruck(80);
+        original.coordinates.x = 5;
+//        original.loadTruck(20);
+//        cloned.loadTruck(50);
+//        cloned2.loadTruck(80);
 
-        original.move(Directions.Right, 100);
-        cloned.move(Directions.Forward, 40);
-        cloned2.move(Directions.Left, 70);
+//        truck3.move(Directions.Right, 100);
+//        cloned.move(Directions.Forward, 40);
+//        cloned2.move(Directions.Left, 70);
 
-        System.out.println(original);
-        System.out.println(cloned);
-        System.out.println(cloned2);
+//        System.out.println(original);
+//        System.out.println(truck3);
+
+        System.out.println(original.coordinates.x + " deep:" + truck3.coordinates.x + " shallow:" + truck4.coordinates.x);
+//        System.out.println(cloned);
+//        System.out.println(cloned2);
 
 
     }

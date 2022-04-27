@@ -9,11 +9,25 @@ public class Truck extends MotorVehicle implements Cloneable{
     private int trailerWidth;
     private int trailerWeight;
 
+    public Coordinates coordinates = new Coordinates();
+
+//    public Object clone() throws CloneNotSupportedException{
+//        Truck cloned = (Truck)super.clone();
+//        return cloned;
+//    }
+
     public Object clone() throws CloneNotSupportedException{
-        Truck cloned = (Truck)super.clone();
-        super.vehicleNumberForClonedObject();
-        return cloned;
+        Truck copy = (Truck)super.clone();
+//        copy.coordinates = new Coordinates();
+//        copy.coordinates.x = coordinates.x;
+//        copy.coordinates.y = coordinates.y;
+        return copy;
     }
+
+//    public Object shallowClone() throws CloneNotSupportedException{
+//        Truck copy = (Truck)super.clone();
+//        return copy;
+//    }
 
     public Truck(){
         super(Colors.Black, 10000, 70);
