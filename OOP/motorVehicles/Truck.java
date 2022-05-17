@@ -1,6 +1,8 @@
 package OOP.motorVehicles;
 
-public class Truck extends MotorVehicle implements Cloneable{
+import java.io.Serializable;
+
+public class Truck extends MotorVehicle implements Cloneable, Serializable {
     private int maxLoadCapacity; // kg
     private int currentlyLoaded = 0; // kg
     private int height;

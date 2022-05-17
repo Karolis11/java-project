@@ -1,6 +1,8 @@
 package OOP.motorVehicles;
 
-public class Car extends MotorVehicle{
+import java.io.Serializable;
+
+public class Car extends MotorVehicle implements Serializable {
     private int seatingCapacity;
     private int seatsTaken = 0;
 

@@ -1,6 +1,8 @@
 package OOP.motorVehicles;
 
-public class MotorVehicle implements TrafficParticipant {
+import java.io.Serializable;
+
+public class MotorVehicle implements TrafficParticipant, Serializable {
     private final static String country = "Lithuania";
     public static int vehicleCount = 0;
     private Colors color;
@@ -33,7 +35,7 @@ public class MotorVehicle implements TrafficParticipant {
         this.vehicleNumber = vehicleCount;
     }
 
-    protected void vehicleNumberForClonedObject(){
+     protected void vehicleNumberForClonedObject(){
         assignVehicleNumber();
     }
     // Setters and Getters
